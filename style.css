@@ -1,0 +1,77 @@
+/*===============RESET===========*/
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=M+PLUS+1p:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+/*======VARIÁVEIS=======*/
+:root {
+    font-size: 100%; 
+    --green-color: #00DD9C;
+    --dark-blue: #0d0d0d;
+    --white-color: #F5FBF2;
+
+}
+
+body {
+    background: var(--dark-blue);
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+/*========NAVEGAÇÃO========*/
+nav a {
+    display: block;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
+#header {
+    height: 4.5rem;
+}
+
+#span {
+    color: var(--green-color);
+}
+
+#icon {
+    font-family: 'Amaranth', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+.container {
+    width: 90%;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.section  {
+    text-align: center;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100vw;
+}
+
