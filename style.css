@@ -10,10 +10,13 @@
 /*======VARIÁVEIS=======*/
 :root {
     font-size: 100%; 
+    /* ========== CORES ======= */
+    --placeHolder-color: #80AB9E;
     --green-color: #00DD9C;
+    --button-color: #00E3A5;
     --dark-blue: #0d0d0d;
     --white-color: #F5FBF2;
-
+    --lato-font: 'Lato', sans-serif;;
 }
 
 body {
@@ -44,6 +47,7 @@ nav {
 
 #header {
     height: 4.5rem;
+    
 }
 
 #span {
@@ -57,15 +61,20 @@ nav {
     color: var(--white-color);
 }
 
+
+.section {
+    font-family: var(--lato-font);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2.890625rem;
+}
+
 .container {
     width: 90%;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
-.section  {
-    text-align: center;
-}
 
 .gradient {
     position: absolute;
@@ -73,5 +82,43 @@ nav {
     left: 0;
     z-index: -2;
     width: 100vw;
+}
+
+.placeholder {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--placeHolder-color);
+    margin-bottom: 1rem;
+}
+
+.content {
+    font-family: var(--lato-font);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3.65rem;
+    margin-bottom: 3.65rem;
+}
+
+.img {
+    width: 100vw;
+    height: 14.75rem;
+}
+
+.button{
+    display: block;
+    background: var(--button-color);
+    border: none;
+    width: 12.5625rem;
+    height: 4.0625rem;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: var(--lato-font);
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.875rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px  var(--button-color);
 }
 
