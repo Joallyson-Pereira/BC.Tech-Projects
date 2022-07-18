@@ -4,11 +4,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
 
 /*======VARIÁVEIS=======*/
 :root {
+
     font-size: 100%; 
     /* ========== CORES ======= */
     --placeHolder-color: #80AB9E;
@@ -19,11 +22,15 @@
     --lato-font: 'Lato', sans-serif;
     --gray: #9E9E9E;
     --div-color: #00DD9C08;
+
+    /*Fontes*/
+    --poppins: 'Poppins', sans-serif;;
 }
 
 body {
     background: var(--dark-blue);
     color: var(--white-color);
+    overflow-x: hidden;
 }
 
 a {
@@ -32,7 +39,9 @@ a {
 
 
 
-
+.menu {
+    cursor: pointer;
+}
 
 /*========NAVEGAÇÃO========*/
 #header {
@@ -41,6 +50,7 @@ a {
     top: 0;
     left: 0;   
     width: 100vw;
+    
 }
 
 nav a {
@@ -52,6 +62,140 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+}
+
+nav #menu-mobile {
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav.show #menu-mobile{
+    opacity: 1;
+    visibility: visible;
+    background: white;
+    
+    height: 100vh;
+    width: 100vw;
+    
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+}
+
+
+#close {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    z-index: 2;
+    right: 1rem;
+    top: 1rem;
+
+    /*Transition*/
+}
+
+nav.show #close {
+    visibility: visible;
+    opacity: 1;
+}
+
+#close:hover, .open:hover {
+    cursor: pointer;
+}
+
+.open {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+}
+
+
+nav ul li {
+    text-align: center;
+}
+
+#menu-mobile {
+    display: grid;
+    align-items: center;
+}
+
+.list {
+    display: grid;
+    align-items: center;
+    height: 80%;
+    margin: 0 auto;
+}
+
+
+nav.show #menu-mobile .items {
+    color: #000033;
+    font-weight: 800;
+    font-family: var(--poppins);
+    font-size: 1.75rem;
+    transition: all 0.3s;
+    position: relative;
+
+}
+
+nav.show #menu-mobile .items::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--green-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+
+nav.show #menu-mobile .items:hover::after {
+    content: '';
+    width: 100%;
+}
+
+
+nav.show #menu-mobile .items:hover {
+    color: var(--green-color);
+}
+
+/*
+#mobile {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: grid;
+    align-items: center;
+}
+
+#menu-mobile {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    font-family: var(--prompt);
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+    color: rgb(0, 0, 51);
+    width: 100vw;
+    height: 80vh;
+
+    
+}
+*/
+
+
+.nav {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
 }
 
 table {
@@ -85,7 +229,7 @@ table tr td {
 }
 
 #icon {
-    font-family: 'Amaranth', sans-serif;
+    font-family: var(--poppins);
     font-weight: 600;
     font-size: 2rem;
     color: var(--white-color);
@@ -93,16 +237,46 @@ table tr td {
 
 
 .section {
-    font-family: var(--lato-font);
+    font-family: var(--poppins);
     font-weight: 600;
     text-align: center;
     margin-top: 7.390625rem;
 }
+#achievements {
+    padding-top: 2rem;
+}
 
 .container {
-    width: 90%;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.special {
+    
+    font-size: 2.25rem;
+    background: var(--div-color);
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-family: var(--poppins);
+    font-weight: 600;
+    text-align: center;
+    margin-top: -2.03125rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+
+.special .background {
+    position: absolute;
+    display: block;
+    z-index: -5;
+    top: 2.03125rem;
+    left: 0;
+    height: 94%;
+    width: 100%;
 }
 
 
@@ -123,18 +297,19 @@ table tr td {
 }
 
 .content {
-    font-family: var(--lato-font);
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 3.65rem;
-    margin-bottom: 3.65rem;
-}
-.content2 {
-    font-family: var(--lato-font);
+    font-family: var(--poppins);
     font-weight: 700;
     font-size: 2rem;
     line-height: 3.65rem;
     margin-bottom: 3.65rem;
+}
+.content2 {
+    font-family: var(--poppins);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3.65rem;
+    margin-bottom: 3.65rem;
+    padding: 0 1rem;
 }
 
 .img {
@@ -143,6 +318,7 @@ table tr td {
 
 #special {
   position: relative;
+  padding-top: 4rem;
 }
 
 #special::after {
@@ -174,7 +350,7 @@ table tr td {
     height: 4.0625rem;
     border-radius: 5px;
     font-size: 1.25rem;
-    font-family: var(--lato-font);
+    font-family: var(--poppins);
     font-weight: 400;
     margin-left: auto;
     margin-right: auto;
@@ -194,8 +370,8 @@ table tr td {
 }
 
 .title {
-    font-size: 2rem;
-    font-family: var(--lato-font);
+    font-size: 1.75rem;
+    font-family: var(--poppins);
     font-weight: 700;
     line-height: 150%;
     height: 3rem;
@@ -205,12 +381,12 @@ table tr td {
 
 .button2 {
     margin-top: 2.5rem;
-    background: var(--dark-blue);
+    background: black;
     color: var(--white-color);
     width: 12.5rem;
     height: 4rem;
     border: 1px solid var(--button-color);
-    font-family: var(--lato-font);
+    font-family: var(--poppins);
     border-radius: 5px;
     font-size: 1.125rem;
     font-weight: 800;
@@ -313,7 +489,7 @@ table tr td {
     height: 64vh;
     background: rgb(10, 22, 25, 0.4);
     top: -2rem;
-    right: -2rem;
+    right: 0rem;
     border-top-left-radius: 100%;
 
 }
@@ -362,4 +538,176 @@ table tr td {
     color: var(--placeHolder-color);
     margin-top: 0.5rem;
     font-size: 0.75rem;
+}
+
+
+.img-swip {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: 0.5rem;
+    cursor: pointer;
+    
+}
+
+.testimonials p {
+    font-family: var(--poppins);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 4.5625rem 0 4.5625rem;
+}
+
+.swiper-button-next {
+    clip-path: circle();
+    background: var(--button-color);
+    padding-left: 1.3rem;
+}
+
+.swiper-button-prev {
+    clip-path: circle();
+    background: var(--button-color);
+    padding-left: 1.65rem;
+}
+
+blockquote {
+    position: relative;
+}
+
+#vector {
+    position: absolute;
+    left: 4rem;
+}
+
+#title2 {
+    font-family: var(--poppins);
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+
+#last-p {
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 2rem;
+    line-height: 1.625rem;
+    color: var(--placeHolder-color);
+}
+
+.last h2 {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.Newgr {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 0;
+    gap: 0;
+    margin-top: 1.5rem;
+    height: 3.5rem;
+
+}
+
+.Newgr input {
+    background: none;
+    outline: none;
+    border: 1px solid var(--button-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding-left: 1rem;
+    color: white;
+}
+.Newgr input:focus {
+    border: 1px solid var(--placeHolder-color);
+}
+
+
+.Newgr div {
+    background: var(--button-color);
+    padding: 0.5rem;
+    color: #0d0d0d;
+    padding-top: 1rem;
+    font-weight: 800;
+    border-radius: 0 0.5rem 0.5rem 0;
+    transition: 0.3s;
+}
+
+.Newgr div:hover {
+    background: rgb(85, 216, 181);
+    color: white;
+    cursor: pointer;
+}
+
+.linha {
+    margin-top: 2rem;
+    width: 100%;
+    height: 1px;
+    background: var(--placeHolder-color);
+}
+
+#last {
+    margin-top: 1.75rem;
+    padding-bottom: 3rem;
+    position: relative;
+    padding-top: 2rem;
+}
+
+#last .informations {
+    margin-bottom: 2.5rem;
+}
+#last .informations h1 {
+    margin-bottom: 1.75rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+#last .informations p, footer {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--placeHolder-color)
+}
+
+#images img {
+    display: inline-flex;   
+    
+}
+
+#last #images .icon:hover  {
+    
+    cursor: pointer;
+}
+
+#images img:nth-child(2) {
+    margin: 0 1.5rem;
+}
+
+#last .world {
+    position: absolute;
+    top: 6.25rem;
+    display: block;
+    width: 80%;
+    z-index: -8;
+    opacity: 0.4;
+}
+
+#last #background_for_last {
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 80%;
+    opacity: 0.8;
+}
+#last #background_for_last2 {
+    z-index: -5;
+    position: absolute;
+    bottom: 8rem;
+    left: 0;
+    display: block;
+    width: 80%;
+    opacity: 0.5;
 }

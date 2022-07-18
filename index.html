@@ -1,4 +1,3 @@
-<!--====ESTOU APRENDENDO HTML====-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--======= ESTILO =======-->
     <link rel="stylesheet" href="style.css">
-
     <!--==========FONTES==========-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=M+PLUS+1p:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+     <!--===========SWIPER============-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    <title>My Landim Page</title>
     
-<title>My Landim Page</title>
 </head>
 
 <body>
     <img class="gradient"src="/images/gradient.svg">
 
     <header id="header">
-    <nav class="container">
-        <a id="icon"href="#" class="logo">B<span id="span">.</span>CTech</a>
-        <div class="menu"><img src="/images/Menuicon-menu.svg" alt="icone-menu"></div>
-    </nav>
-            
+    <nav class="nav" id="home">
+        <a id="icon"href="#home" class="logo">B<span id="span">.</span>CTech</a>
+        
+
+        <div id="menu-mobile">
+        <ul class="list">
+            <li><a onclick="remover()" class="items" href="#home">Home</a></li>
+            <li><a onclick="remover()" class="items" href="#achievements">Achievements</a></li>
+            <li><a onclick="remover()" class="items" href="#special">About Us</a></li>
+            <li><a onclick="remover()" class="items" href="#reviews">Reviews</a></li>
+            <li><a onclick="remover()" class="items" href="#last">Contact</a></li>
+        </ul>
+        </div>
+
+        <div class="open" onclick="mostrar()"><img src="/images/Menuicon-menu.svg" alt="icone-menu"></div>
+        <div><img id="close" onclick="remover()" src="images/social_medias/Cancel.svg" alt=""></div>
+       
+        
+        <!--<div class="menu"></div>-->
+    </nav> 
     </header>
+
 
     <section class="section container">
         <h1 class="placeholder">Build the Future with </h1>
@@ -35,7 +52,7 @@
     <img class="img" src="/images/boxes.svg" alt="imagem">
     <button class="button"type="button">Get Whitepaper</button> 
     
-    <section class="section">
+    <section class="section" id="achievements">
         <h1 class="placeholder">Achievements</h1>
         <p class="content2">Full Decentralised and Currency Security</p>
         <table>
@@ -89,7 +106,7 @@
         </div>
     </section>
 
-    <section class="section container second">
+    <section class="section container second" id="second">
         <h1 class="content2">How do we work
             our system and our journey</h1>
 
@@ -117,19 +134,110 @@
             </div>
             <img  class="icon" src="images/icons/third-icon.svg" alt="icone">
         </div>
-        <button class="button2" type="button">Let's See More</button>
+        <button id="button2" class="button2" type="button">Let's See More</button>
     </section>
 
-    <section class="section container">
-        <h1 class="placeholder">Build the Future with </h1>
-        <p class="content">Blockchain technology and Currency</p>
+    <section class="special" id="reviews">
+        <img class="background" src="images/background2.png">
+        <p class="content">Our Community with User reviews</p>
+
+        <!-- Slider main container -->
+        <div class="swiper mySwiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="testimonials swiper-slide">
+            <blockquote>
+                <img id="vector"src="/images/Vector.svg">
+                <cite>
+                    <img class="img-swip" src="/images/user-one.jpg">
+                </cite>
+                <p>-David Gavin, Software Engineer at Nubank company.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat et ut quisquam, doloribus perferendis dicta suscipit.</p>
+
+            </blockquote>
+        </div>
+        <div class="testimonials swiper-slide">
+            <blockquote>
+                <img id="vector"src="/images/Vector.svg">
+                <img class="img-swip"src="/images/user-four.png">
+                <p>-Dake M. Chile, Business Owner of Bellie.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat et ut quisquam, doloribus perferendis dicta suscipit.</p>
+            </blockquote>
+        </div>
+        <div class="testimonials swiper-slide">
+            <blockquote>
+                <img id="vector"src="/images/Vector.svg">
+                <cite>
+                    <img class="img-swip" src="/images/user-three.jpg">
+                </cite>
+                <p>-Milena Christopher, CEO at a Shopee Company.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat et ut quisquam, doloribus perferendis dicta suscipit.</p>
+
+            </blockquote>
+        </div>
+    </div>
+    <div class="swiper-button-next"><img src="/images/Arrow rightsetas.svg"></div>
+    <div class="swiper-button-prev"><img src="/images/Arrow leftsetas.svg"></div>
+    
+    </div>
+    </section>
+    <section class="section container last">
+        <h1 id="title2">B<span id="span">.</span>Tech</h1>
+        <p  id="last-p"class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, doloremque! Voluptatum velit minus harum corrupti repellat ex nemo cupiditate consequatur! Fuga nisi vitae nulla officiis beatae at obcaecati ad laborum.</p>
+
+        <h2>Newslatter</h2>
+
+        <div class="Newgr">
+        <input type="text" id="submit">
+        <div>Submit</div>
+        
+        </div>
+        <p class="linha"></p>
+
+    </section>
+    
+    <section id="last" class="section container last">
+
+        <div class="informations">
+        <h1>About Us</h1>
+        <p>Whitepaper</p>
+        <p>Blog</p>
+        <p>Activity</p>
+        </div>
+
+        <div class="informations">
+        <h1>Support</h1>
+        <p>Help & Support</p>
+        <p>Community</p>
+        <p>Author Profile</p>
+        <p>Contact</p>
+        </div>
+        
+        <div class="informations">
+        <h1>Social Media</h1>
+        <div id="images">
+            <img src="/images/social_medias/Whatsapp.svg" class="icon" alt="whatsapp">
+            <img src="/images/social_medias/Youtube.svg" class="icon" alt="youtube">
+            <img src="/images/social_medias/Instagram.svg" class="icon" alt="instagram">
+        </div>
+        </div>
+
+        <img src="/images/mapa.svg" alt="mapa do mundo" class="world">
+        <img src="images/social_medias/background_for_last.svg" id="background_for_last">
+        <img src="images/social_medias/background_for_last.svg" id="background_for_last2">
+
+        <footer>All rights reserved@2022</footer>
     </section>
     
 
 
 
+    <!--====SWIPER====-->
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
+
+    
     <!--======= SCRIPT =======-->
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
+    
 </body>
 </html>
