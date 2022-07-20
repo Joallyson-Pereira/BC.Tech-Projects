@@ -22,6 +22,14 @@ function remover() {
   document.querySelector('.nav').classList.remove('show')
 }
 
-
+/* Botão voltar para o topo*/
+const backToTopButton = document.querySelector('.back-to-top')
+window.addEventListener('scroll', function(){
+  if (window.scrollY >= 100) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+})
 
 
