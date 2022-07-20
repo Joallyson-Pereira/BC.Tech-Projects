@@ -2,7 +2,7 @@
 <p>Hello everyone! 😎🧐</p> 
 <p>🏆 Mais um projeto que sai do papel</p>
 <p>🙏 Estou aprendendo desenvolvimento web e criei esse projeto do total 0 apenas com HTML, CSS e JavaScript. Fui na plataforma de design Figma e busquei por um layout que eu pudesse aplicar os conhecimentos que aprendi até agora, e decidi fazer o desig mobile desse projeto</p><br>
-<p> Pode acessar <a src=https://fabulous-bonbon-784353.netlify.app>clicando aqui.</a> preferencialmente abrir no smartphone<p>
+<p> Pode acessa pelo link: https://fabulous-bonbon-784353.netlify.app preferencialmente abrir no smartphone<p>
 
 
 ![Figma Cover](https://user-images.githubusercontent.com/71677681/179873377-00ba43f2-0d9a-4058-83b8-39063c57ea2a.png)
